@@ -1,10 +1,30 @@
-
 import { useState } from "react";
 import { Filter } from "lucide-react";
 
 interface CarDatabasePageProps {
   onViewCarDetails: () => void;
 }
+
+const carImageMap: Record<string, string> = {
+  "Toyota Camry":
+    "https://images.unsplash.com/photo-1511391403515-5160d3236232?auto=format&fit=crop&w=640&q=80", // Blue sedan
+  "Honda Civic":
+    "https://images.unsplash.com/photo-1461632830798-3adb3034e4c8?auto=format&fit=crop&w=640&q=80", // Red sedan
+  "Toyota Corolla": 
+    "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=640&q=80", // White sedan
+  "Nissan X-Trail": 
+    "https://images.unsplash.com/photo-1517148815978-75f6acaaf32c?auto=format&fit=crop&w=640&q=80", // SUV silver
+  "Mitsubishi Pajero":
+    "https://images.unsplash.com/photo-1511918984145-48de785d4c4e?auto=format&fit=crop&w=640&q=80", // SUV white
+  "Honda CR-V":
+    "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=640&q=80", // Silver/gray SUV
+  "Toyota RAV4":
+    "https://images.unsplash.com/photo-1483728642387-b772b3340dce?auto=format&fit=crop&w=640&q=80", // Dark SUV
+  "Hyundai Tucson":
+    "https://images.unsplash.com/photo-1449426468159-d96aa4897218?auto=format&fit=crop&w=640&q=80", // White SUV
+  "Kia Sportage":
+    "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?auto=format&fit=crop&w=640&q=80", // Orange SUV
+};
 
 const CarDatabasePage = ({ onViewCarDetails }: CarDatabasePageProps) => {
   const [filters, setFilters] = useState({
@@ -21,15 +41,24 @@ const CarDatabasePage = ({ onViewCarDetails }: CarDatabasePageProps) => {
   const years = ["All", ...Array.from({ length: 6 }, (_, i) => (2020 + i).toString())];
   
   const sampleCars = [
-    { id: 1, make: "Toyota", model: "Camry", year: 2023, price: "45 lakh", image: "bg-blue-100" },
-    { id: 2, make: "Honda", model: "Civic", year: 2022, price: "38 lakh", image: "bg-green-100" },
-    { id: 3, make: "Toyota", model: "Corolla", year: 2023, price: "35 lakh", image: "bg-red-100" },
-    { id: 4, make: "Nissan", model: "X-Trail", year: 2022, price: "60 lakh", image: "bg-yellow-100" },
-    { id: 5, make: "Mitsubishi", model: "Pajero", year: 2021, price: "75 lakh", image: "bg-purple-100" },
-    { id: 6, make: "Honda", model: "CR-V", year: 2023, price: "65 lakh", image: "bg-indigo-100" },
-    { id: 7, make: "Toyota", model: "RAV4", year: 2022, price: "55 lakh", image: "bg-pink-100" },
-    { id: 8, make: "Hyundai", model: "Tucson", year: 2023, price: "45 lakh", image: "bg-gray-100" },
-    { id: 9, make: "Kia", model: "Sportage", year: 2022, price: "42 lakh", image: "bg-orange-100" },
+    { id: 1, make: "Toyota", model: "Camry", year: 2023, price: "45 lakh",
+      image: carImageMap["Toyota Camry"] },
+    { id: 2, make: "Honda", model: "Civic", year: 2022, price: "38 lakh",
+      image: carImageMap["Honda Civic"] },
+    { id: 3, make: "Toyota", model: "Corolla", year: 2023, price: "35 lakh",
+      image: carImageMap["Toyota Corolla"] },
+    { id: 4, make: "Nissan", model: "X-Trail", year: 2022, price: "60 lakh",
+      image: carImageMap["Nissan X-Trail"] },
+    { id: 5, make: "Mitsubishi", model: "Pajero", year: 2021, price: "75 lakh",
+      image: carImageMap["Mitsubishi Pajero"] },
+    { id: 6, make: "Honda", model: "CR-V", year: 2023, price: "65 lakh",
+      image: carImageMap["Honda CR-V"] },
+    { id: 7, make: "Toyota", model: "RAV4", year: 2022, price: "55 lakh",
+      image: carImageMap["Toyota RAV4"] },
+    { id: 8, make: "Hyundai", model: "Tucson", year: 2023, price: "45 lakh",
+      image: carImageMap["Hyundai Tucson"] },
+    { id: 9, make: "Kia", model: "Sportage", year: 2022, price: "42 lakh",
+      image: carImageMap["Kia Sportage"] },
   ];
   
   const filteredCars = sampleCars.filter((car) => {
@@ -91,7 +120,13 @@ const CarDatabasePage = ({ onViewCarDetails }: CarDatabasePageProps) => {
             className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer"
             onClick={onViewCarDetails}
           >
-            <div className={`h-48 ${car.image}`}></div>
+            <div className="h-48 w-full overflow-hidden relative">
+              <img
+                src={car.image}
+                alt={`${car.make} ${car.model}`}
+                className="h-full w-full object-cover transition-transform duration-200 hover:scale-105"
+              />
+            </div>
             <div className="p-4">
               <h3 className="font-semibold text-lg mb-1">{car.make} {car.model}</h3>
               <p className="text-gray-600 mb-2">{car.year}</p>

@@ -1,6 +1,11 @@
-
 import { useState } from "react";
 import { Search } from "lucide-react";
+
+const carImageByIndex = [
+  "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=640&q=80", // Variant 1
+  "https://images.unsplash.com/photo-1461632830798-3adb3034e4c8?auto=format&fit=crop&w=640&q=80", // Variant 2
+  "https://images.unsplash.com/photo-1517148815978-75f6acaaf32c?auto=format&fit=crop&w=640&q=80", // Variant 3
+];
 
 const SearchPage = () => {
   const [searchParams, setSearchParams] = useState({
@@ -102,7 +107,13 @@ const SearchPage = () => {
             {[1, 2, 3].map((idx) => (
               <div key={idx} className="border p-4 rounded-md hover:bg-gray-50">
                 <div className="flex flex-col md:flex-row gap-4">
-                  <div className="w-full md:w-1/4 bg-gray-200 h-32 rounded-md"></div>
+                  <div className="w-full md:w-1/4 rounded-md overflow-hidden h-32 bg-gray-200">
+                    <img
+                      src={carImageByIndex[idx - 1]}
+                      alt={`Variant ${idx}`}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-medium">
                       {searchParams.make} {searchParams.model} {searchParams.year} - Variant {idx}

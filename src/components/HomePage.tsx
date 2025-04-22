@@ -5,6 +5,29 @@ interface HomePageProps {
   onNavigate: () => void;
 }
 
+const popularCars = [
+  {
+    name: "Toyota Corolla",
+    price: "Starting from 30 lakh BDT",
+    image: "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=640&q=80", // Sedan, white
+  },
+  {
+    name: "Honda Civic",
+    price: "Starting from 30 lakh BDT",
+    image: "https://images.unsplash.com/photo-1461632830798-3adb3034e4c8?auto=format&fit=crop&w=640&q=80", // Red sedan
+  },
+  {
+    name: "Mitsubishi Pajero",
+    price: "Starting from 30 lakh BDT",
+    image: "https://images.unsplash.com/photo-1511918984145-48de785d4c4e?auto=format&fit=crop&w=640&q=80", // SUV, white
+  },
+  {
+    name: "Nissan X-Trail",
+    price: "Starting from 30 lakh BDT",
+    image: "https://images.unsplash.com/photo-1517148815978-75f6acaaf32c?auto=format&fit=crop&w=640&q=80", // Silver SUV
+  },
+];
+
 const HomePage = ({ onNavigate }: HomePageProps) => {
   return (
     <div className="flex flex-col items-center">
@@ -67,12 +90,18 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
           <h2 className="text-3xl font-bold text-center mb-12">Popular Cars in Bangladesh</h2>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {["Toyota Corolla", "Honda Civic", "Mitsubishi Pajero", "Nissan X-Trail"].map((car, index) => (
+            {popularCars.map((car, index) => (
               <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                <div className="h-40 bg-gray-300"></div>
+                <div className="h-40 w-full overflow-hidden relative">
+                  <img
+                    src={car.image}
+                    alt={car.name}
+                    className="h-full w-full object-cover transition-transform duration-200 hover:scale-105"
+                  />
+                </div>
                 <div className="p-4">
-                  <h3 className="font-semibold text-lg mb-2">{car}</h3>
-                  <p className="text-gray-600 text-sm">Starting from 30 lakh BDT</p>
+                  <h3 className="font-semibold text-lg mb-2">{car.name}</h3>
+                  <p className="text-gray-600 text-sm">{car.price}</p>
                   <button onClick={onNavigate} className="mt-4 text-blue-600 hover:text-blue-800 text-sm font-medium">
                     View Details
                   </button>
