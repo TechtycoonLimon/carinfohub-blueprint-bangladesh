@@ -9,22 +9,22 @@ const popularCars = [
   {
     name: "Toyota Corolla",
     price: "Starting from 30 lakh BDT",
-    image: "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=640&q=80", // Sedan, white
+    image: "https://images.unsplash.com/photo-1623869675781-80aa31012a5a?auto=format&fit=crop&w=640&q=80", // Updated Corolla image
   },
   {
     name: "Honda Civic",
     price: "Starting from 30 lakh BDT",
-    image: "https://images.unsplash.com/photo-1461632830798-3adb3034e4c8?auto=format&fit=crop&w=640&q=80", // Red sedan
+    image: "https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?auto=format&fit=crop&w=640&q=80", // Updated Civic image
   },
   {
     name: "Mitsubishi Pajero",
     price: "Starting from 30 lakh BDT",
-    image: "https://images.unsplash.com/photo-1511918984145-48de785d4c4e?auto=format&fit=crop&w=640&q=80", // SUV, white
+    image: "https://images.unsplash.com/photo-1680975745161-92dd4a5b9f7c?auto=format&fit=crop&w=640&q=80", // Updated Pajero image
   },
   {
     name: "Nissan X-Trail",
     price: "Starting from 30 lakh BDT",
-    image: "https://images.unsplash.com/photo-1517148815978-75f6acaaf32c?auto=format&fit=crop&w=640&q=80", // Silver SUV
+    image: "https://images.unsplash.com/photo-1579372786545-d24232dfa6be?auto=format&fit=crop&w=640&q=80", // Updated X-Trail image
   },
 ];
 

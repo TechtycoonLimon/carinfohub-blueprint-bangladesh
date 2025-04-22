@@ -10,7 +10,7 @@ const carA = {
   transmission: "8-Speed Automatic",
   fuelEconomy: "28 city / 39 highway",
   seating: "5 passengers",
-  image: "https://images.unsplash.com/photo-1511391403515-5160d3236232?auto=format&fit=crop&w=640&q=80",
+  image: "https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9?auto=format&fit=crop&w=640&q=80",
 };
 
 const carB = {
@@ -23,7 +23,7 @@ const carB = {
   transmission: "CVT Automatic",
   fuelEconomy: "30 city / 38 highway",
   seating: "5 passengers",
-  image: "https://images.unsplash.com/photo-1461632830798-3adb3034e4c8?auto=format&fit=crop&w=640&q=80",
+  image: "https://images.unsplash.com/photo-1582639510494-c80b5de9f148?auto=format&fit=crop&w=640&q=80",
 };
 
 const comparisonPoints = [

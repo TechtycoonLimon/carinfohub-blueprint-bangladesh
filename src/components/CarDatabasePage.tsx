@@ -7,23 +7,23 @@ interface CarDatabasePageProps {
 
 const carImageMap: Record<string, string> = {
   "Toyota Camry":
-    "https://images.unsplash.com/photo-1511391403515-5160d3236232?auto=format&fit=crop&w=640&q=80", // Blue sedan
+    "https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9?auto=format&fit=crop&w=640&q=80", // Updated Camry image
   "Honda Civic":
-    "https://images.unsplash.com/photo-1461632830798-3adb3034e4c8?auto=format&fit=crop&w=640&q=80", // Red sedan
+    "https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?auto=format&fit=crop&w=640&q=80", // Updated Civic image
   "Toyota Corolla": 
-    "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=640&q=80", // White sedan
+    "https://images.unsplash.com/photo-1623869675781-80aa31012a5a?auto=format&fit=crop&w=640&q=80", // Updated Corolla image
   "Nissan X-Trail": 
-    "https://images.unsplash.com/photo-1517148815978-75f6acaaf32c?auto=format&fit=crop&w=640&q=80", // SUV silver
+    "https://images.unsplash.com/photo-1579372786545-d24232dfa6be?auto=format&fit=crop&w=640&q=80", // Updated X-Trail image
   "Mitsubishi Pajero":
-    "https://images.unsplash.com/photo-1511918984145-48de785d4c4e?auto=format&fit=crop&w=640&q=80", // SUV white
+    "https://images.unsplash.com/photo-1680975745161-92dd4a5b9f7c?auto=format&fit=crop&w=640&q=80", // Updated Pajero image
   "Honda CR-V":
-    "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=640&q=80", // Silver/gray SUV
+    "https://images.unsplash.com/photo-1568954947940-b71139f95a13?auto=format&fit=crop&w=640&q=80", // Updated CR-V image
   "Toyota RAV4":
-    "https://images.unsplash.com/photo-1483728642387-b772b3340dce?auto=format&fit=crop&w=640&q=80", // Dark SUV
+    "https://images.unsplash.com/photo-1630750796085-5fa9da033f05?auto=format&fit=crop&w=640&q=80", // Updated RAV4 image
   "Hyundai Tucson":
-    "https://images.unsplash.com/photo-1449426468159-d96aa4897218?auto=format&fit=crop&w=640&q=80", // White SUV
+    "https://images.unsplash.com/photo-1656468014942-ce119011b38f?auto=format&fit=crop&w=640&q=80", // Updated Tucson image
   "Kia Sportage":
-    "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?auto=format&fit=crop&w=640&q=80", // Orange SUV
+    "https://images.unsplash.com/photo-1635341814747-51c3c39d02a3?auto=format&fit=crop&w=640&q=80", // Updated Sportage image
 };
 
 const CarDatabasePage = ({ onViewCarDetails }: CarDatabasePageProps) => {

@@ -1,10 +1,11 @@
+
 import { useState } from "react";
 import { Search } from "lucide-react";
 
 const carImageByIndex = [
-  "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=640&q=80", // Variant 1
-  "https://images.unsplash.com/photo-1461632830798-3adb3034e4c8?auto=format&fit=crop&w=640&q=80", // Variant 2
-  "https://images.unsplash.com/photo-1517148815978-75f6acaaf32c?auto=format&fit=crop&w=640&q=80", // Variant 3
+  "https://images.unsplash.com/photo-1623869675781-80aa31012a5a?auto=format&fit=crop&w=640&q=80", // Updated Corolla image
+  "https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?auto=format&fit=crop&w=640&q=80", // Updated Civic image
+  "https://images.unsplash.com/photo-1568954947940-b71139f95a13?auto=format&fit=crop&w=640&q=80", // Updated CR-V image
 ];
 
 const SearchPage = () => {
