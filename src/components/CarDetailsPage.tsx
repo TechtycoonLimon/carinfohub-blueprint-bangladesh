@@ -34,6 +34,7 @@ const CarDetailsPage = ({ onBackToDatabase }: CarDetailsPageProps) => {
       "6-speaker sound system",
     ],
     description: "The 2023 Toyota Camry continues to deliver the quality, reliability, and value that have made it a bestseller in Bangladesh. With its comfortable ride, spacious interior, and excellent fuel economy, the Camry remains a top choice for families and professionals alike.",
+    image: "https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9?auto=format&fit=crop&w=800&q=80"
   };
 
   return (
@@ -44,16 +45,19 @@ const CarDetailsPage = ({ onBackToDatabase }: CarDetailsPageProps) => {
       >
         <ArrowLeft className="h-5 w-5 mr-1" /> Back to Database
       </button>
-      
       <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-        <div className="h-64 bg-blue-100"></div>
-        
+        {/* Add car banner image */}
+        <div className="h-64 bg-blue-100 flex items-center justify-center overflow-hidden">
+          <img
+            src={car.image}
+            alt={`${car.make} ${car.model}`}
+            className="h-60 w-auto object-cover rounded-md shadow"
+          />
+        </div>
         <div className="p-6">
           <h1 className="text-3xl font-bold mb-2">{car.make} {car.model} {car.year}</h1>
           <p className="text-xl text-blue-600 font-medium mb-6">Price: {car.price}</p>
-          
           <p className="text-gray-700 mb-8">{car.description}</p>
-          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <div>
               <h2 className="text-xl font-semibold mb-4 pb-2 border-b">Specifications</h2>
@@ -66,7 +70,6 @@ const CarDetailsPage = ({ onBackToDatabase }: CarDetailsPageProps) => {
                 ))}
               </ul>
             </div>
-            
             <div>
               <h2 className="text-xl font-semibold mb-4 pb-2 border-b">Key Features</h2>
               <ul className="space-y-2">
@@ -81,7 +84,6 @@ const CarDetailsPage = ({ onBackToDatabase }: CarDetailsPageProps) => {
               </ul>
             </div>
           </div>
-          
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition-colors">
               Request Test Drive

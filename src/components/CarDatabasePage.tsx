@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Filter } from "lucide-react";
 
@@ -5,25 +6,26 @@ interface CarDatabasePageProps {
   onViewCarDetails: () => void;
 }
 
+// All cars now have eye-catching images!
 const carImageMap: Record<string, string> = {
   "Toyota Camry":
-    "https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9?auto=format&fit=crop&w=640&q=80", // Updated Camry image
+    "https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9?auto=format&fit=crop&w=640&q=80",
   "Honda Civic":
-    "https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?auto=format&fit=crop&w=640&q=80", // Updated Civic image
+    "https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?auto=format&fit=crop&w=640&q=80",
   "Toyota Corolla": 
-    "https://images.unsplash.com/photo-1623869675781-80aa31012a5a?auto=format&fit=crop&w=640&q=80", // Updated Corolla image
+    "https://images.unsplash.com/photo-1623869675781-80aa31012a5a?auto=format&fit=crop&w=640&q=80",
   "Nissan X-Trail": 
-    "https://images.unsplash.com/photo-1579372786545-d24232dfa6be?auto=format&fit=crop&w=640&q=80", // Updated X-Trail image
+    "https://images.unsplash.com/photo-1579372786545-d24232dfa6be?auto=format&fit=crop&w=640&q=80",
   "Mitsubishi Pajero":
-    "https://images.unsplash.com/photo-1680975745161-92dd4a5b9f7c?auto=format&fit=crop&w=640&q=80", // Updated Pajero image
+    "https://images.unsplash.com/photo-1680975745161-92dd4a5b9f7c?auto=format&fit=crop&w=640&q=80",
   "Honda CR-V":
-    "https://images.unsplash.com/photo-1568954947940-b71139f95a13?auto=format&fit=crop&w=640&q=80", // Updated CR-V image
+    "https://images.unsplash.com/photo-1568954947940-b71139f95a13?auto=format&fit=crop&w=640&q=80",
   "Toyota RAV4":
-    "https://images.unsplash.com/photo-1630750796085-5fa9da033f05?auto=format&fit=crop&w=640&q=80", // Updated RAV4 image
+    "https://images.unsplash.com/photo-1630750796085-5fa9da033f05?auto=format&fit=crop&w=640&q=80",
   "Hyundai Tucson":
-    "https://images.unsplash.com/photo-1656468014942-ce119011b38f?auto=format&fit=crop&w=640&q=80", // Updated Tucson image
+    "https://images.unsplash.com/photo-1656468014942-ce119011b38f?auto=format&fit=crop&w=640&q=80",
   "Kia Sportage":
-    "https://images.unsplash.com/photo-1635341814747-51c3c39d02a3?auto=format&fit=crop&w=640&q=80", // Updated Sportage image
+    "https://images.unsplash.com/photo-1635341814747-51c3c39d02a3?auto=format&fit=crop&w=640&q=80"
 };
 
 const CarDatabasePage = ({ onViewCarDetails }: CarDatabasePageProps) => {
@@ -71,13 +73,11 @@ const CarDatabasePage = ({ onViewCarDetails }: CarDatabasePageProps) => {
   return (
     <div className="max-w-6xl mx-auto">
       <h1 className="text-3xl font-bold text-center mb-8">Car Database</h1>
-      
       <div className="bg-white p-6 rounded-lg shadow-md mb-8">
         <div className="flex items-center mb-4">
           <Filter className="h-5 w-5 text-blue-600 mr-2" />
           <h2 className="font-semibold text-lg">Filter Cars</h2>
         </div>
-        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="block text-gray-700 font-medium mb-2">Make</label>
@@ -112,7 +112,6 @@ const CarDatabasePage = ({ onViewCarDetails }: CarDatabasePageProps) => {
           </div>
         </div>
       </div>
-      
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredCars.map((car) => (
           <div 
@@ -120,7 +119,7 @@ const CarDatabasePage = ({ onViewCarDetails }: CarDatabasePageProps) => {
             className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer"
             onClick={onViewCarDetails}
           >
-            <div className="h-48 w-full overflow-hidden relative">
+            <div className="h-48 w-full overflow-hidden relative bg-gray-200">
               <img
                 src={car.image}
                 alt={`${car.make} ${car.model}`}
@@ -146,7 +145,6 @@ const CarDatabasePage = ({ onViewCarDetails }: CarDatabasePageProps) => {
           </div>
         ))}
       </div>
-      
       {filteredCars.length === 0 && (
         <div className="text-center py-10">
           <p className="text-gray-600">No cars match your filter criteria.</p>
