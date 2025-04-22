@@ -9,22 +9,22 @@ const popularCars = [
   {
     name: "Toyota Corolla",
     price: "Starting from 30 lakh BDT",
-    image: "https://images.unsplash.com/photo-1623869675781-80aa31012a5a?auto=format&fit=crop&w=640&q=80", // Updated Corolla image
+    image: "https://images.unsplash.com/photo-1623869675781-80aa31012a5a?auto=format&fit=crop&w=640&q=80",
   },
   {
     name: "Honda Civic",
     price: "Starting from 30 lakh BDT",
-    image: "https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?auto=format&fit=crop&w=640&q=80", // Updated Civic image
+    image: "https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?auto=format&fit=crop&w=640&q=80",
   },
   {
     name: "Mitsubishi Pajero",
     price: "Starting from 30 lakh BDT",
-    image: "https://images.unsplash.com/photo-1680975745161-92dd4a5b9f7c?auto=format&fit=crop&w=640&q=80", // Updated Pajero image
+    image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=640&q=80",
   },
   {
     name: "Nissan X-Trail",
     price: "Starting from 30 lakh BDT",
-    image: "https://images.unsplash.com/photo-1579372786545-d24232dfa6be?auto=format&fit=crop&w=640&q=80", // Updated X-Trail image
+    image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=640&q=80",
   },
 ];
 
@@ -97,6 +97,12 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
                     src={car.image}
                     alt={car.name}
                     className="h-full w-full object-cover transition-transform duration-200 hover:scale-105"
+                    loading="eager"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.onerror = null;
+                      target.src = "https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&w=640&q=80";
+                    }}
                   />
                 </div>
                 <div className="p-4">

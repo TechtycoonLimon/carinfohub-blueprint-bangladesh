@@ -46,12 +46,18 @@ const CarDetailsPage = ({ onBackToDatabase }: CarDetailsPageProps) => {
         <ArrowLeft className="h-5 w-5 mr-1" /> Back to Database
       </button>
       <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-        {/* Add car banner image */}
+        {/* Car banner image */}
         <div className="h-64 bg-blue-100 flex items-center justify-center overflow-hidden">
           <img
             src={car.image}
             alt={`${car.make} ${car.model}`}
-            className="h-60 w-auto object-cover rounded-md shadow"
+            className="h-full w-full object-cover rounded-md shadow"
+            loading="eager"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.onerror = null;
+              target.src = "https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&w=800&q=80";
+            }}
           />
         </div>
         <div className="p-6">
